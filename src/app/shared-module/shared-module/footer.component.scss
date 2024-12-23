@@ -1,0 +1,170 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #222;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 40px;
+}
+
+.column {
+  text-align: left;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.social-media {
+  display: flex;
+  margin-top: 20px;
+}
+
+.social-media a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.social-media img {
+  width: 30px;
+  height: 30px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.social-icon img {
+  width: 25px;
+  height: 25px;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.instagram {
+  background-color: #f09433;
+}
+
+.linkedin {
+  background-color: #007bb5;
+}
+
+.youtube {
+  background-color: #ff0000;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack the columns vertically */
+    padding-top: 20px; /* Reduce top padding */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .column {
+    width: 100%; /* Make each column take full width */
+    text-align: center; /* Center text for better presentation on small screens */
+    margin-bottom: 20px; /* Add spacing between columns */
+  }
+
+  .social-media {
+    justify-content: center; /* Center the social media links */
+    margin-top: 20px;
+  }
+
+  .social-media a {
+    margin: 0 8px; /* Reduce space between social media icons */
+  }
+
+  .social-icons {
+    margin-top: 40px; /* Reduce top margin */
+  }
+
+  .social-icon {
+    width: 35px; /* Slightly smaller icons */
+    height: 35px;
+    margin: 0 8px; /* Reduced margin */
+  }
+
+  .social-icon img {
+    width: 22px; /* Smaller icon size */
+    height: 22px;
+  }
+
+  h2 {
+    font-size: 24px; /* Adjust header size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px; /* Minimal padding for very small screens */
+  }
+
+  .column {
+    width: 100%; /* Full width of the container for each column */
+    text-align: center; /* Center the text */
+  }
+
+  h2 {
+    font-size: 20px; /* Adjust header font size for small screens */
+    margin-bottom: 10px; /* Smaller margin */
+  }
+
+  ul {
+    padding-left: 20px; /* Add padding to left for list items */
+  }
+
+  .social-media a {
+    margin: 0 5px; /* Even smaller margin between social icons */
+  }
+
+  .social-icon {
+    width: 30px; /* Smaller social icon size */
+    height: 30px;
+  }
+
+  .social-icon img {
+    width: 20px; /* Smaller icon size */
+    height: 20px;
+  }
+
+  .social-icons {
+    margin-top: 30px; /* Reduce spacing for small screens */
+  }
+}

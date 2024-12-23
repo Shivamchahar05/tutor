@@ -1,0 +1,22 @@
+<div>
+    <h1>Course List</h1>
+    <div class="main-section">
+      <ul class="listing">
+        <li *ngFor="let course of courses" [ngClass]="{'selected': course.class === '10th Grade'}">
+            <div class="apply-btn-cource">
+          <h2>{{ course.class }}</h2>
+           <div class="apply-btn">
+            <button class="apply-button" (click)="hiretutor()">Apply</button>
+          </div>
+            </div>
+          <p>{{ course.description }}</p>
+          <ul>
+            <li *ngFor="let subject of course.subjects">{{ subject }}</li>
+          </ul>
+         
+           <!-- Apply button inside each course -->
+        </li>
+      </ul>
+    </div>
+  </div>
+  

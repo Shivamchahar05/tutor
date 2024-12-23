@@ -1,0 +1,137 @@
+/* Main Container */
+.container {
+  display: grid;
+  grid-template-columns: 37% 37% 37%; /* 3 columns */
+  align-items: center;
+  width: 50%;
+  gap: 20px; /* Add space between columns */
+}
+
+/* Main Section Container */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+  padding: 0px 100px;
+  padding-bottom: 50px;
+}
+
+/* Text Styles */
+.text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #585858;
+  line-height: 2.5rem;
+}
+
+/* Number Styling */
+.number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ff6900;
+}
+
+/* Detail Styling */
+.detail {
+  font-size: 1rem;
+  color: #777777;
+  padding-top: 10px;
+}
+
+/* Center Box Styling */
+.center-box {
+  border-right: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  text-align: center;
+}
+
+/* Right Box Styling */
+.right-box {
+  text-align: center;
+}
+
+/* Mobile Responsiveness (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  /* Container Adjustments: Change grid layout to 2 columns */
+  .container {
+      grid-template-columns: 1fr 1fr; /* 2 columns on tablets */
+     
+  }
+
+  /* Main Container: Adjust padding for mobile */
+  .main-container {
+      flex-direction: column;
+      padding: 0px 20px;
+      padding-bottom: 30px;
+  }
+
+  /* Text adjustments */
+  .text {
+      font-size: 1.4rem; /* Slightly smaller font size */
+      line-height: 2rem; /* Adjust line height */
+  }
+
+  /* Number adjustments */
+  .number {
+      font-size: 2.5rem; /* Smaller number size */
+  }
+
+  /* Detail text adjustments */
+  .detail {
+      font-size: 0.9rem; /* Slightly smaller font size */
+  }
+
+  /* Center Box and Right Box adjustments */
+  .center-box {
+      border-right: none; /* Remove right border */
+      border-left: none; /* Remove left border */
+      margin-bottom: 20px; /* Add space between sections */
+  }
+
+  .right-box {
+      margin-top: 20px; /* Add margin to separate sections */
+  }
+}
+
+/* Additional Mobile Adjustments (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  /* Container Adjustments: Switch to single column layout */
+  .container {
+    grid-template-columns: 1fr;
+    width: 45%
+
+  }
+
+  /* Main Container: Adjust padding for mobile */
+  .main-container {
+      padding: 0px 10px;
+      padding-bottom: 20px;
+  }
+
+  /* Text adjustments */
+  .text {
+      font-size: 1.2rem; /* Smaller font size */
+      line-height: 1.8rem; /* Adjust line height */
+  }
+
+  /* Number adjustments */
+  .number {
+      font-size: 2rem; /* Even smaller font size */
+  }
+
+  /* Detail text adjustments */
+  .detail {
+      font-size: 0.8rem; /* Smaller font size for detail */
+  }
+
+  /* Center Box and Right Box adjustments */
+  .center-box {
+      border: none; /* Remove borders */
+      margin-bottom: 10px; /* Reduce space between sections */
+  }
+
+  .right-box {
+      margin-top: 10px; /* Less margin on smaller screens */
+  }
+}

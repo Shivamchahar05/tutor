@@ -1,0 +1,53 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Phone Number Field -->
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input
+          type="text"
+          id="phoneNumber"
+          formControlName="phoneNumber"
+          class="form-control"
+          placeholder="Enter phone number"
+        />
+        <div *ngIf="loginForm.get('phoneNumber')?.touched && loginForm.get('phoneNumber')?.invalid" class="error-message">
+          <small *ngIf="loginForm.get('phoneNumber')?.hasError('required')">Phone number is required.</small>
+          <small *ngIf="loginForm.get('phoneNumber')?.hasError('pattern')">Invalid phone number. Must be 10 digits.</small>
+        </div>
+      </div>
+  
+      <!-- Password Field with Eye Icon -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input
+            [type]="hidePassword ? 'password' : 'text'"
+            id="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="Enter password"
+          />
+          <!-- Material Icon for Eye Toggle -->
+          <mat-icon 
+            class="eye-icon"
+            (click)="togglePasswordVisibility()">
+            {{ hidePassword ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
+        </div>
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="error-message">
+          <small *ngIf="loginForm.get('password')?.hasError('required')">Password is required.</small>
+          <small *ngIf="loginForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</small>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" >Login</button>
+    </form>
+  
+    <!-- Create Account Link -->
+    <div class="create-account">
+      <p>Don't have an account? <a routerLink="/account/signup">Create an account</a></p>
+    </div>
+  </div>
+  

@@ -1,0 +1,15 @@
+<div>
+    <h1>Course List</h1>
+    <div>
+      <ul class="listing">
+        <li *ngFor="let course of courses" [ngClass]="{'selected': course.class === '10th Grade'}">
+          <h2>{{ course.class }}</h2>
+          <p>{{ course.description }}</p>
+          <ul>
+            <li *ngFor="let subject of course.subjects">{{ subject }}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

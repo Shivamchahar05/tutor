@@ -1,0 +1,114 @@
+<div class="form-container">
+  <div style="display: flex; justify-content: space-between;">
+    <h1>Hire a Tutor</h1>
+    <mat-icon (click)="onCancelClick()">cancel</mat-icon>
+  </div>
+ 
+
+  <form [formGroup]="hireForm" (ngSubmit)="onSubmit()">
+    <!-- Student Name -->
+    <div class="form-group">
+      <label for="student-name">Student Name</label>
+      <input
+        type="text"
+        id="student-name"
+        formControlName="studentName"
+        placeholder="Enter student's full name"
+        required
+      />
+      <div *ngIf="f?.['studentName']?.invalid && f?.['studentName']?.touched" class="error-message">
+        <small *ngIf="f?.['studentName']?.errors?.['required']">Student name is required.</small>
+        <small *ngIf="f?.['studentName']?.errors?.['minlength']">Student name must be at least 3 characters long.</small>
+      </div>
+    </div>
+
+    <!-- Student Phone Number -->
+    <div class="form-group">
+      <label for="student-phone">Student Phone Number</label>
+      <input
+        type="number"
+        id="student-phone"
+        formControlName="studentPhone"
+        placeholder="Enter student's phone number"
+        required
+      />
+      <div *ngIf="f?.['studentPhone']?.invalid && f?.['studentPhone']?.touched" class="error-message">
+        <small *ngIf="f?.['studentPhone']?.errors?.['required']">Phone number is required.</small>
+        <small *ngIf="f?.['studentPhone']?.errors?.['pattern']">Phone number is invalid.</small>
+      </div>
+    </div>
+
+    <!-- Your Name -->
+    <div class="form-group">
+      <label for="name">Your Name</label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="Enter your full name"
+        required
+      />
+      <div *ngIf="f?.['name']?.invalid && f?.['name']?.touched" class="error-message">
+        <small *ngIf="f?.['name']?.errors?.['required']">Your name is required.</small>
+        <small *ngIf="f?.['name']?.errors?.['minlength']">Your name must be at least 3 characters long.</small>
+      </div>
+    </div>
+
+    <!-- Your Email -->
+    <div class="form-group">
+      <label for="email">Your Email</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Enter your email address"
+        required
+      />
+      <div *ngIf="f?.['email']?.invalid && f?.['email']?.touched" class="error-message">
+        <small *ngIf="f?.['email']?.errors?.['required']">Email is required.</small>
+        <small *ngIf="f?.['email']?.errors?.['email']">Please enter a valid email address.</small>
+      </div>
+    </div>
+
+    <!-- Student Class -->
+    <div class="form-group">
+      <label for="student-class">Student Class</label>
+      <select id="student-class" formControlName="studentClass" (change)="onClassChange($event)" required>
+        <option value="" disabled selected>Please select a class</option>
+        <option *ngFor="let classItem of tutor.classes" [value]="classItem.className">
+          {{ classItem.className }}
+        </option>
+      </select>
+      <div *ngIf="f?.['studentClass']?.invalid && f?.['studentClass']?.touched" class="error-message">
+        <small *ngIf="f?.['studentClass']?.errors?.['required']">Class selection is required.</small>
+      </div>
+    </div>
+
+    <!-- Preferred Subject -->
+    <div class="form-group">
+      <label for="subject">Preferred Subject</label>
+      <select id="subject" formControlName="subject"  (change)="onSubjectChange($event)" required>
+        <option value="" disabled>Select Subjects</option>
+        <option *ngFor="let subject of filteredSubjects" [value]="subject">{{ subject }}</option>
+      </select>
+      <div *ngIf="f?.['subject']?.invalid && f?.['subject']?.touched" class="error-message">
+        <small *ngIf="f?.['subject']?.errors?.['required']">At least one subject is required.</small>
+      </div>
+    </div>
+
+    <!-- Display Selected Subjects -->
+    <div class="form-group">
+      <label>Selected Subjects</label>
+      <div style="display: flex;" *ngIf="selectedSubjects.length > 0">
+        <div style="margin-left: 10px;" *ngFor="let selectedSubject of selectedSubjects">
+          <p>{{ selectedSubject }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group">
+      <button type="submit" class="submit-btn">Hire Tutor</button>
+    </div>
+  </form>
+</div>

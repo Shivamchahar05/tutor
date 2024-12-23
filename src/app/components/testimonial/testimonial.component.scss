@@ -1,0 +1,129 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 50px;
+  padding: 0px 50px;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row; /* Left to right carousel by default */
+  transition: transform 0.5s ease-in-out;
+  justify-content: center; /* Centering carousel items */
+}
+
+.carousel-item {
+  flex: 0 0 100%; /* Each item takes up full width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease, filter 0.5s ease; /* Smooth transitions */
+}
+
+.testimonial {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+  transition: filter 0.5s ease;
+}
+
+/* Active item styling: highlighted in the center */
+.carousel-item.active .testimonial {
+  transform: scale(1.1); /* Slight zoom-in effect for active item */
+}
+
+/* Blurring effect for the previous and next items */
+.carousel-item.prev .testimonial,
+.carousel-item.next .testimonial {
+  filter: blur(3px); /* Apply blur effect to non-active items */
+}
+
+/* Style for the buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Centering the carousel title */
+h1 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 50px;
+  font-size: 35px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .carousel-container {
+    padding: 0 20px; /* Reduce padding on smaller screens */
+  }
+
+  .carousel {
+    flex-direction: column; /* Stack carousel items vertically */
+  }
+
+  .carousel-item {
+    flex: 0 0 90%; /* Allow carousel items to take 90% width on mobile */
+  }
+
+  .testimonial {
+    width: 90%; /* Reduce width of testimonial on mobile */
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 28px; /* Adjust title size for mobile */
+    margin-bottom: 30px; /* Reduce bottom margin */
+  }
+
+  .prev, .next {
+    padding: 8px; /* Smaller padding for buttons on mobile */
+    font-size: 16px; /* Adjust font size of buttons */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* For very small screens like phones in portrait mode */
+  .carousel-container {
+    padding: 0 10px; /* Minimal padding on extra small screens */
+  }
+
+  .testimonial {
+    width: 100%; /* Full width of the screen for each testimonial */
+    padding: 10px; /* Smaller padding on smaller screens */
+  }
+
+  h1 {
+    font-size: 24px; /* Further reduce font size for very small screens */
+    margin-bottom: 20px;
+  }
+
+  .prev, .next {
+    padding: 5px; /* Even smaller padding for extra small screens */
+    font-size: 14px; /* Adjust font size for very small screens */
+  }
+}

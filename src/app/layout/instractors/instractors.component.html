@@ -1,0 +1,46 @@
+<div class="teacher-list">
+    <h1 class="title">Teachers List</h1>
+
+    <div class="teacher-card" *ngFor="let teacher of Tutors">
+        <div class="teacher-card-header">
+            <div class="teacher-card-distribute">
+                <div class="teacher-image">
+                    <img [src]="teacher.image" alt="{{ teacher.name }}" />
+                </div>
+                <div>
+                    <h2>{{ teacher.name }}</h2>
+                    <p class="specialization"><strong>Specialization:</strong>{{ teacher.specialization }}</p>
+                </div>
+            </div>
+            <div class="hire">
+                <button (click)="hireTutor(teacher)">Hire Tutor</button>
+            </div>
+        </div>
+
+        <div class="teacher-card-body">
+            <p><strong>Experience:</strong> {{ teacher.experienceYears }} years</p>
+
+            <div class="class-selection">
+                <label for="classSelect"><strong>Select Class:</strong></label>
+                <select id="classSelect" [(ngModel)]="selectedClass" (change)="onClassChange(teacher)">
+                    <option value="" disabled selected>Please select a class</option>
+                    <option *ngFor="let classItem of teacher.classes" [value]="classItem._id">
+                        {{ classItem.className }}
+                    </option>
+                </select>
+            </div>
+
+            <div *ngIf="selectedClassDetails">
+                <p><strong>Subjects:</strong> {{ selectedClassDetails.subjects.join(', ') }}</p>
+                <p *ngIf="isClassGreaterThan8(selectedClassDetails)">
+                    <strong>Per Subject Rate:</strong> ₹{{ selectedClassDetails.rate }}
+                </p>
+                <p *ngIf="!isClassGreaterThan8(selectedClassDetails)">
+                    <strong>Rate:</strong> ₹{{ selectedClassDetails.rate }}
+                </p>
+            </div>
+
+            <p><strong>Location:</strong> {{ teacher.location }}</p>
+        </div>
+    </div>
+</div>

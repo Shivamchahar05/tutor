@@ -1,0 +1,157 @@
+/* Main Container for Choose Section */
+.choose-container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+/* Heading for Choose Section */
+.choose-container h1 {
+    line-height: 38px;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+/* Choose Section Text */
+.choose {
+    font-size: 18px;
+}
+
+/* Right Container Styling */
+.right-container {
+    margin-left: 50px;
+}
+
+/* Heading inside Right Container */
+.right-container h3 {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 500;
+}
+
+/* Experience Container inside Right Container */
+.right-container .experince-container {
+    border-top: 1px solid lightgray;
+    padding-top: 20px;
+}
+
+.right-container .experince-container p {
+    color: grey;
+    font-size: 17px;
+}
+
+/* Left Container Styling */
+.left-container {
+    padding-right: 50px;
+}
+
+.left-container p {
+    margin-right: 50px;
+    color: grey;
+    font-size: 17px;
+}
+
+/* Image inside Left Container */
+.left-container .choose-image {
+    height: 412px;
+}
+
+/* Mobile Responsiveness (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .choose{
+        text-align: center;
+    }
+    /* Choose Container: Stack the content vertically */
+    .choose-container {
+        flex-direction: column;
+        align-items: center; /* Center align for smaller screens */
+        padding: 0 20px; /* Reduced padding for mobile */
+    }
+
+    /* Heading for Choose Section */
+    .choose-container h1 {
+        font-size: 28px; /* Smaller font size for mobile */
+        text-align: center; /* Center align the heading */
+    }
+
+    /* Right Container: Adjust layout */
+    .right-container {
+        margin-left: 0;
+        margin-top: 20px; /* Add margin for separation */
+        text-align: center; /* Center align text for mobile */
+    }
+
+    .right-container h3 {
+        font-size: 24px; /* Smaller font size */
+        text-align: center; /* Center the heading */
+    }
+
+    .right-container .experince-container {
+        padding-top: 15px; /* Reduce padding */
+    }
+
+    .right-container .experince-container p {
+        font-size: 15px; /* Smaller font size for mobile */
+    }
+
+    /* Left Container: Adjust layout */
+    .left-container {
+        padding-right: 0;
+        text-align: center; /* Center text for mobile */
+    }
+
+    .left-container p {
+        margin-right: 0; /* Remove right margin */
+        font-size: 15px; /* Smaller font size */
+    }
+
+    /* Left Container Image */
+    .left-container .choose-image {
+        height: 300px; /* Reduce image size for mobile */
+        width: 100%; /* Make the image responsive */
+        object-fit: cover; /* Ensure the image covers the area */
+    }
+}
+
+/* Mobile Adjustments (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    /* Choose Container: Adjust flex layout for very small screens */
+    .choose-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px; /* Further reduced padding */
+    }
+
+    /* Heading for Choose Section */
+    .choose-container h1 {
+        font-size: 24px; /* Further reduce font size */
+    }
+
+    /* Right Container */
+    .right-container {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .right-container h3 {
+        font-size: 22px; /* Smaller font size */
+    }
+
+    .right-container .experince-container p {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    /* Left Container */
+    .left-container {
+        padding-right: 0;
+    }
+
+    .left-container p {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .left-container .choose-image {
+        height: 250px; /* Further reduce image size */
+        width: 100%; /* Make the image fully responsive */
+    }
+}

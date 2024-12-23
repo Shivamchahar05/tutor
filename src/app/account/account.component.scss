@@ -1,0 +1,62 @@
+.account-section {
+    display: flex;
+    /* Removed comment for 'justify-content' to make it clearer */
+    justify-content: space-between; /* To space out content properly */
+    width: 100%;
+  }
+  
+  .account-login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .img-container {
+    width: 50%;
+  }
+  
+  img {
+    height: 99.3vh; /* Full screen height minus a small margin */
+    width: 100%; /* Ensure the image takes the full width */
+  }
+  
+  /* Mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    .account-section {
+      flex-direction: column; /* Stack content vertically on smaller screens */
+      align-items: center; /* Center items horizontally */
+    }
+  
+    .account-login-container {
+      width: 80%; /* Increase width on smaller screens for better readability */
+      margin-bottom: 20px; /* Add some space between sections */
+    }
+  
+    .img-container {
+      width: 100%; /* Image container takes full width */
+      margin-top: 20px; /* Add some space above the image */
+    }
+  
+    img {
+      height: auto; /* Allow the image height to adjust automatically */
+      width: 100%; /* Ensure the image still takes full width */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .account-login-container {
+      width: 90%; /* Further increase width for mobile devices */
+    }
+  
+    .img-container {
+      width: 100%; /* Image container still takes full width */
+      margin-top: 15px; /* Reduce margin for smaller screens */
+    }
+  
+    img {
+      height: auto; /* Allow image to adapt based on width */
+      width: 100%; /* Ensure the image is responsive */
+    }
+  }
+  

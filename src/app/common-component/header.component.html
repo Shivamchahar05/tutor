@@ -1,0 +1,31 @@
+<div class="header-container">
+    <div class="img-container">
+      <img src="/assets/tutor.png" alt="Logo">
+    </div>
+  
+    <div>
+      <mat-tab-group animationDuration="0ms" [selectedIndex]="selectedIndex" (selectedTabChange)="onTabChange($event)">
+        <mat-tab label="Home" routerLink="/home"></mat-tab>
+        <mat-tab label="Courses" routerLink="/courses"></mat-tab>
+        <mat-tab label="Instructors" routerLink="/instructors"></mat-tab>
+        <!-- <mat-tab label="About Us" routerLink="/about"></mat-tab> -->
+        <mat-tab label="Contact" routerLink="/home"></mat-tab>
+      </mat-tab-group>
+    </div>
+  
+    <div class="btn-login" *ngIf="accessTokenCheck">
+      <button (click)="login()">Log In</button>
+    </div>
+  
+    <div class="user-dropdown" *ngIf="!accessTokenCheck">
+      <button (click)="toggleDropdown()">
+        {{ username }}
+      </button>
+      <div *ngIf="dropdownVisible" class="dropdown-content">
+        <button (click)="logout()">Profile</button>
+
+        <button (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+  

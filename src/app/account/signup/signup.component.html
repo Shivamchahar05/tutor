@@ -1,0 +1,91 @@
+<div class="register-container">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <!-- Name Field -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          class="form-control"
+          placeholder="Enter your name"
+        />
+        <div *ngIf="registerForm.get('name')?.touched && registerForm.get('name')?.invalid">
+          <small *ngIf="registerForm.get('name')?.hasError('required')">Name is required.</small>
+          <small *ngIf="registerForm.get('name')?.hasError('pattern')">Name must contain only letters.</small>
+        </div>
+      </div>
+  
+      <!-- Phone Number Field -->
+      <div class="form-group">
+        <label for="phoneNumber">Phone Number</label>
+        <input
+          type="text"
+          id="phoneNumber"
+          formControlName="phoneNumber"
+          class="form-control"
+          placeholder="Enter phone number"
+        />
+        <div *ngIf="registerForm.get('phoneNumber')?.touched && registerForm.get('phoneNumber')?.invalid">
+          <small *ngIf="registerForm.get('phoneNumber')?.hasError('required')">Phone number is required.</small>
+          <small *ngIf="registerForm.get('phoneNumber')?.hasError('pattern')">Invalid phone number. Must be 10 digits.</small>
+        </div>
+      </div>
+  
+      <!-- Password Field with Eye Icon -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="password-container">
+          <input
+            [type]="hidePassword ? 'password' : 'text'"
+            id="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="Enter password"
+          />
+          <mat-icon 
+            class="eye-icon"
+            (click)="togglePasswordVisibility()">
+            {{ hidePassword ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
+        </div>
+        <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+          <small *ngIf="registerForm.get('password')?.hasError('required')">Password is required.</small>
+          <small *ngIf="registerForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</small>
+        </div>
+      </div>
+  
+      <!-- Confirm Password Field with Eye Icon -->
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <div class="password-container">
+          <input
+            [type]="hideConfirmPassword ? 'password' : 'text'"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            class="form-control"
+            placeholder="Confirm password"
+          />
+          <mat-icon 
+            class="eye-icon"
+            (click)="toggleConfirmPasswordVisibility()">
+            {{ hideConfirmPassword ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
+        </div>
+        <div *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid">
+          <small *ngIf="registerForm.get('confirmPassword')?.hasError('required')">Confirm password is required.</small>
+          <small *ngIf="registerForm.get('confirmPassword')?.hasError('mismatch')">Passwords must match.</small>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" >Register</button>
+    </form>
+  
+    <!-- Login Link -->
+    <div class="login-link">
+      <p>Already have an account? <a routerLink="/account/login">Login</a></p>
+    </div>
+  </div>
+  

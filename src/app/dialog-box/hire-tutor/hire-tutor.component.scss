@@ -1,0 +1,154 @@
+/* General Styling for the form */
+.form-container {
+    min-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: red;
+}
+
+/* Styling for each form group */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Focus and Hover Effects */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+.submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    /* Adjust the form container padding */
+    .form-container {
+        padding: 15px;
+        min-width: 48%;
+    }
+
+    /* Adjust the heading font size */
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust form-group margin */
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    /* Make the submit button full width on mobile */
+    .submit-btn {
+        width: 100%;
+        padding: 14px; /* Increase button padding for better usability */
+        font-size: 1.2rem; /* Increase font size for better readability */
+    }
+    
+    /* Adjust input fields' font size */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+        font-size: 1.1rem; /* Slightly larger font size for readability */
+    }
+}
+
+/* Further responsiveness for very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Adjust form container padding */
+    .form-container {
+        padding: 10px;
+    }
+
+    /* Further reduce font size for heading */
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    /* Adjust margin for form groups on very small screens */
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    /* Adjust input fields for small screens */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+        font-size: 1rem; /* Reduce font size for better fitting */
+    }
+
+    /* Make button a bit smaller for very small screens */
+    .submit-btn {
+        padding: 12px 15px; /* Adjust padding for very small screens */
+        font-size: 1rem; /* Reduce font size for very small screens */
+    }
+}

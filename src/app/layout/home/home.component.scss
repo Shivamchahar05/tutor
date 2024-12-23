@@ -1,0 +1,245 @@
+/* Home Container Styles */
+.home-container {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    min-height: 830px;
+    padding: 0px 110px;
+}
+
+.home-container .home-section {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+.home-container .home-section p {
+    color: white;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.home-container .home-section .button-section {
+    display: flex;
+    margin-top: 50px;
+    flex-wrap: wrap; /* Allow buttons to stack on smaller screens */
+}
+
+.home-container .home-section .button-section .hire-btn,
+.home-container .home-section .button-section .learn-btn {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.home-container .home-section .button-section .learn-btn {
+    background-color: black;
+    border: 1px solid orange;
+}
+
+.home-container .home-section .tutors-count {
+    margin-top: 50px;
+}
+
+.home-container .home-section .tutors-circle {
+    margin-top: 50px;
+    display: inline-block;
+    margin: -10px;
+}
+
+.home-container .home-section .tutors-circle img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.home-container .home-section .count-heading {
+    display: flex;
+}
+
+.home-container .home-section .tutor-count-heading {
+    color: white;
+    margin-left: 50px;
+    margin-top: 39px;
+}
+
+.home-container .home-section .tutor-count-heading h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.home-container .home-section .right-section {
+    display: flex;
+}
+
+.home-container .home-section .right-section .first-img {
+    height: 550px;
+}
+
+.home-container .home-section .right-section .right-image-section {
+    margin-left: 20px;
+}
+
+.home-container .home-section .right-section .right-image-section .second-img,
+.home-container .home-section .right-section .right-image-section .third-img,
+.home-container .home-section .right-section .right-image-section .fourth-img {
+    height: 170px;
+}
+
+.home-container .home-section .right-section .right-image-section .third-img {
+    margin-top: 20px;
+    width: 239px;
+}
+
+.home-container .home-section .right-section .right-image-section .fourth-img {
+    margin-top: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    color: white;
+    font-size: 70px;
+    line-height: 90px;
+    font-weight: 600;
+}
+
+/* Choose Section Styles */
+.choose-section {
+    padding: 0px 110px;
+    margin-top: 50px;
+}
+
+/* Testimonial Section */
+.testimonial {
+    margin: 0px 200px;
+}
+
+/* Mobile Responsiveness (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    /* Home Container Section */
+    .home-container {
+        padding: 0 20px; /* Reduced padding */
+    }
+
+    /* Adjust Home Section Layout */
+    .home-container .home-section {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+    }
+
+    .home-container .home-section p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    /* Button Section */
+    .home-container .home-section .button-section {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .home-container .home-section .button-section .hire-btn,
+    .home-container .home-section .button-section .learn-btn {
+        width: 100%; /* Full width on mobile */
+        margin-right: 0; /* Remove margin between buttons */
+        margin-bottom: 10px;
+    }
+
+    .home-container .home-section .tutors-circle img {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Tutor Count Heading */
+    .home-container .home-section .tutor-count-heading {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .home-container .home-section .tutor-count-heading h3 {
+        font-size: 16px;
+    }
+
+    /* Right Section Layout */
+    .home-container .home-section .right-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-container .home-section .right-section .first-img {
+        height: 400px;
+        width: 100%; /* Full width */
+    }
+
+    .home-container .home-section .right-section .right-image-section {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .home-container .home-section .right-section .right-image-section .second-img,
+    .home-container .home-section .right-section .right-image-section .third-img,
+    .home-container .home-section .right-section .right-image-section .fourth-img {
+        width: 100%; /* Full width on mobile */
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    /* Adjust Heading Font Size */
+    h1 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    /* Choose Section Padding */
+    .choose-section {
+        padding: 0 20px;
+    }
+
+    /* Testimonial Margin */
+    .testimonial {
+        margin: 0 20px;
+    }
+}
+
+/* Additional Mobile Adjustments (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    /* Smaller font sizes for text */
+    .home-container .home-section p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .home-container .home-section .button-section .hire-btn,
+    .home-container .home-section .button-section .learn-btn {
+        font-size: 14px;
+        padding: 8px 30px;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .home-container .home-section .right-section .first-img {
+        height: 300px;
+    }
+
+    .home-container .home-section .right-section .right-image-section .second-img,
+    .home-container .home-section .right-section .right-image-section .third-img,
+    .home-container .home-section .right-section .right-image-section .fourth-img {
+        height: 150px;
+        width: 100%;
+    }
+
+    .home-container .home-section .right-section {
+        align-items: center;
+    }
+}
