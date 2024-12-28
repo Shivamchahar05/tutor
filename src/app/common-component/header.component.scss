@@ -26,6 +26,16 @@
   border-color: yellow !important;
 }
 
+::ng-deep .mat-mdc-tab.mdc-tab .mdc-tab__text-label:hover {
+  color: yellow !important;
+}
+::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab-indicator__content--underline:hover {
+  color: yellow !important;
+}
+::ng-deep.mdc-tab__content:hover{
+  color: yellow !important;
+}
+
 
 /* Button Styles for Login */
 .btn-login {
@@ -146,6 +156,13 @@
 
   ::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab-indicator__content--underline {
     height: 2px;
+  }
+  ::ng-deep .mat-mdc-tab.mdc-tab .mdc-tab__text-label:hover {
+    color: yellow;
+  }
+
+  ::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab-indicator__content--underline:hover {
+    color: yellow;
   }
 }
 

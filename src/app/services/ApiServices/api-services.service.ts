@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiServicesService {
   user_id:any;
-  baseurl = "http://localhost:3005"
+  baseurl = "https://2669-2405-201-4050-d08b-7347-632d-c4b7-d881.ngrok-free.app"
   paymentIds: any;
   constructor(private http:HttpClient) { }
 
@@ -26,7 +26,6 @@ export class ApiServicesService {
   getTutorProfile(): Observable <any>{
     return this.http.get(this.baseurl + "/dev/tutor/v1/tutor");
   }
-
 
   bookedTutor(data:any): Observable <any>{
     return this.http.post(this.baseurl + "/dev/tutor/v1/booked-tutor" , data);
